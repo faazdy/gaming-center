@@ -1,0 +1,75 @@
+@use '_variables.scss' as *;
+*{
+    transition: .3s ease;
+}
+body{
+    background: $background1;
+    color: $color1;
+}
+
+.hero-content{
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    background-image: url("./content imgs/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    p{
+        width: 55%;
+    }
+    p, h1, .buttons{z-index: 2;}
+} .hero-content::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    background-color: rgba(15, 15, 15, 0.479);
+    z-index: 2;
+}
+
+/*sections*/
+section{
+    padding: 1em;
+}
+
+.about-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .text{
+        padding: 2em;
+        p{width: 80%;}
+    }
+    img{ 
+        box-shadow: rgba(202, 33, 33, 0.25) 0px 50px 100px -20px, rgba(97, 36, 36, 0.3) 0px 30px 60px -30px;
+        border-radius: 10px;
+    }
+}
+
+.services-section{
+    .text{
+       padding: 2em;
+    }
+}
+.card-container{
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    .card{
+        color: $color1;
+        padding: 1em;
+        background-color: $glass;
+        backdrop-filter: $blurFilter;
+        box-shadow: $w11BoxShadow;
+        text-align: center;
+        img{width: 50%; max-width: 230px; margin: 0 auto;}
+    }
+}
