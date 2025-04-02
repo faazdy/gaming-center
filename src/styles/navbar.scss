@@ -1,0 +1,20 @@
+@use "./variables" as *;
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+}
+nav{
+    background-color: rgba(54, 54, 54, 0.685);
+    backdrop-filter: $blurFilter;
+
+    i{
+        margin-right: 7px;
+    }
+}
+nav img{
+    max-width: 45px;
+    margin: .4em;
+}
