@@ -1,6 +1,6 @@
 @use '_variables.scss' as *;
 *{
-    transition: .3s ease;
+    transition: color .1s ease;
 }
 body{
     background: $background1;
@@ -38,13 +38,15 @@ body{
 section{
     padding: 1em;
 }
+.text{
+    padding: 2em;
+}
 
 .about-section{
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     .text{
-        padding: 2em;
         p{width: 80%;}
     }
     img{ 
@@ -53,11 +55,6 @@ section{
     }
 }
 
-.services-section{
-    .text{
-       padding: 2em;
-    }
-}
 .card-container{
     padding: 0 2em;
     display: grid;
@@ -70,6 +67,10 @@ section{
         backdrop-filter: $blurFilter;
         box-shadow: $w11BoxShadow;
         text-align: center;
-        img{width: 50%; max-width: 230px; margin: 0 auto;}
+        img{width: 50%; max-width: 80px; margin: 0 auto;}
+        strong{
+            font-size: 21px;
+            font-weight: 100;
+        }
     }
 }
