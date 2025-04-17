@@ -1,52 +1,53 @@
 import React from "react";
+import { v4 as uuid } from "uuid";
+
+const carrouselItems = [
+  {
+    id: uuid(),
+    itemTitle: "🎮 Multiplayer Madness",
+    itemDesciption: "Team up or go head-to-head with your friends in our high-end gaming zones.",
+    itemImage: "./content imgs/hero2.png"
+  },
+  {
+    id: uuid(),
+    itemTitle: "🕹️ Enjoy with your friends",
+    itemDesciption: "Relax with your fiends in our place of gaming",
+    itemImage: "./content imgs/s2.png"
+  },
+  {
+    id: uuid(),
+    itemTitle: "🔥 Competitive Tournaments",
+    itemDesciption: "Join weekly tournaments and show off your skills for glory and prizes.",
+    itemImage: "./content imgs/s1.png"
+  }
+];
 
 function Carrousel() {
   return (
-    <div id="carouselExampleCaptions" className="carousel slide">
+    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+        {carrouselItems.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to={index}
+            className={index === 0 ? "active" : ""}
+            aria-current={index === 0 ? "true" : undefined}
+            aria-label={`Slide ${index + 1}`}
+          ></button>
+        ))}
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src="..." className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+        {carrouselItems.map((item, index) => (
+          <div key={item.id} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+            <img src={item.itemImage} className="d-block w-100" alt={item.itemTitle} />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>{item.itemTitle}</h5>
+              <p>{item.itemDesciption}</p>
+            </div>
           </div>
-        </div>
-        <div className="carousel-item">
-          <img src="..." className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src="..." className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
+        ))}
       </div>
       <button
         className="carousel-control-prev"
