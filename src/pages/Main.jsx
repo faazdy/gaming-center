@@ -26,7 +26,7 @@ function Main() {
 
                     </div>
                     <div className="img">
-                        <img src="./content imgs/s1.png" alt="pic" className='img-fluid' />
+                        <img src="./content-imgs/s1.png" alt="pic" className='img-fluid' />
                     </div>
                 </section>
                 <section className="services-section" id='services-section'>
