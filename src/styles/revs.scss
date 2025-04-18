@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+.main-revs .hero-content{
+    background-image: url("./content imgs/bgif2.gif");
+}
+.reviews-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+.rev-card{
+    width: auto;
+    background-color: $glass;
+    box-shadow: $w11BoxShadow;
+    padding: 1em;
+    border-radius: 5px;
+
+    .user-data{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img{width: 50px; height: 50px; border-radius: 50%;}
+    }   
+}
