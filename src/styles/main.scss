@@ -1,6 +1,6 @@
 @use '_variables.scss' as *;
 *{
-    transition: color .1s ease;
+    transition: color .3s ease;
 }
 body{
     background: $background1;
@@ -18,12 +18,16 @@ body{
     position: relative;
     z-index: 1;
 
-    background-image: url("./content imgs/hero.png");
+    background-image: url("./content imgs/bgif3.gif");
     background-repeat: no-repeat;
     background-size: cover;
 
+    h1{
+        color: $btn1;
+    }
     p{
         width: 55%;
+        font-size: clamp(.5rem, .7rem, 1.5rem);
     }
     p, h1, .buttons {z-index: 2;}
 } .hero-content::before{
@@ -33,7 +37,31 @@ body{
     background-color: rgba(15, 15, 15, 0.479);
     z-index: 2;
 }
-
+.btn-cus{
+    display: inline-block;
+    padding: 13px;
+    background-color: $btn1;
+    color: $color1;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .2s all ease-in;
+    margin: 0 5px;
+    
+    &:hover{ 
+        box-shadow: 4px 8px 1px black; 
+        transform: translateY(-5px); 
+    }
+}
+.secondary-cus{
+    background-color: transparent;
+    backdrop-filter: $blurFilter;
+    color: $btn1;
+    border: 1px solid $btn1;
+    &:hover{
+        background-color: $btn1;
+        color: $color1;
+    }
+} 
 /*sections*/
 section{
     padding: 1em;
@@ -75,7 +103,9 @@ section{
     }
 }
  /*form */
-
+form {
+    padding: 1em;
+}
 form input, form textarea, form select{
     background-color: $glass !important;
     color: white !important;
@@ -83,4 +113,29 @@ form input, form textarea, form select{
 
 form select option{
     background-color: $primaryColor !important;
+}
+
+form button{
+    background-color: $glass !important;
+    border: 1px solid $color2 !important;
+    color: white !important;
+}
+
+/*footer*/
+footer{
+    text-align: center;
+    color: $color2;
+    background-color: $primaryColor;
+    padding: 1em;
+}
+
+@media screen and (max-width: 900px) {
+    .hero-content{
+        p{
+            width: 85%;
+        }
+    }
+    .about-section{
+        grid-template-columns: 1fr;
+    }
 }

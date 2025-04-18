@@ -4,17 +4,17 @@ import "../../styles/navbar.scss";
 const socialMedia = [
   {
     id: 1,
-    user: "GamingCenter",
+    user: "GG Nexus",
     icon: "facebook",
   },
   {
     id: 2,
-    user: "gaming-center",
+    user: "gg.nexus",
     icon: "instagram",
   },
   {
     id: 3,
-    user: "gamingcenter1",
+    user: "ggnexus7",
     icon: "twitter-x",
   },
 ];
@@ -37,7 +37,7 @@ function Nav() {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src="./icons/logo.png" alt="" />
-            Gaming Center
+            GG Nexus
           </a>
           <button
             className="navbar-toggler"

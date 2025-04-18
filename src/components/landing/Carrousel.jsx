@@ -6,19 +6,19 @@ const carrouselItems = [
     id: uuid(),
     itemTitle: "🎮 Multiplayer Madness",
     itemDesciption: "Team up or go head-to-head with your friends in our high-end gaming zones.",
-    itemImage: "./content imgs/hero2.png"
+    itemImage: "./content imgs/hero.png"
   },
   {
     id: uuid(),
     itemTitle: "🕹️ Enjoy with your friends",
-    itemDesciption: "Relax with your fiends in our place of gaming",
+    itemDesciption: "Relax with your friends in our place of gaming",
     itemImage: "./content imgs/s2.png"
   },
   {
     id: uuid(),
     itemTitle: "🔥 Competitive Tournaments",
     itemDesciption: "Join weekly tournaments and show off your skills for glory and prizes.",
-    itemImage: "./content imgs/s1.png"
+    itemImage: "./content imgs/hero2.png"
   }
 ];
 
